@@ -75,11 +75,11 @@ class ShopView(APIView):
         shop_description = request.POST.get('shop_description')
         municipality = request.POST.get('municipality')
         shop_address = request.POST.get('shop_address')
-        shop_location = request.POST.get('shop_location')
+        # shop_location = request.POST.get('shop_location')
         shop_logo = request.FILES.get('shop_logo')
         shop_backdrop = request.FILES.get('shop_backdrop')
         Shop.objects.create(shop_name=shop_name, shop_description=shop_description, shop_address=shop_address,
-                            shop_location=shop_location, shop_logo=shop_logo, shop_backdrop=shop_backdrop,
+                            shop_logo=shop_logo, shop_backdrop=shop_backdrop,
                             municipality_id=municipality)
         return Response({'message': 'Magasin cree avec success.'}, status=status.HTTP_201_CREATED)
 
